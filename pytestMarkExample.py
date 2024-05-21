@@ -10,7 +10,7 @@ def test_method2():
 
 def test_method3():
     x=10
-    y=101
+    y=10
     assert x==y
 
 

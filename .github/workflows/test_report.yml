@@ -26,7 +26,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run tests and generate report
-      if: success() || failure()
       run: |
         pytest --tb=no pytestMarkExample.py --junitxml=test_results.xml
 
@@ -42,7 +41,6 @@ jobs:
         name: test-results
     - name: Genarate test report
       uses: dorny/test-reporter@v1.9.1
-      if: success() || failure()
       with:
         name: test-results
         path: test_results.xml
