@@ -24,4 +24,4 @@ def test_method3():
 def test_method4():
     a=2
     b=2
-    assert a + b == 5
+    assert a + b == 9
