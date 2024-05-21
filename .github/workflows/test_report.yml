@@ -35,7 +35,7 @@ jobs:
       with:
         name: test-results
     - name: Genarate test report
-      uses: dorny/test-reporter@v2.2.0
+      uses: dorny/test-reporter@v1
       with:
         name: ${{ github.workflow }}
         files: test-results/test_results.xml
