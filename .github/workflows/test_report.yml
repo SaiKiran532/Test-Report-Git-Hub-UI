@@ -28,6 +28,7 @@ jobs:
     - name: Run tests and generate report
       run: |
         pytest --tb=no pytestMarkExample.py --junitxml=test_results.xml
+      continue-on-error: true
 
     - name: Upload test report as artifact
       uses: actions/upload-artifact@v3
