@@ -27,7 +27,7 @@ jobs:
 
     - name: Run tests and generate report
       run: |
-        pytest --junitxml=test_results.xml
+        pytest --tb=no --junitxml=test_results.xml
       continue-on-error: true
 
     - name: Upload test report as artifact
