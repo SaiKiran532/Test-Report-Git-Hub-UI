@@ -1,6 +1,6 @@
 def test_method1():
     x=10
-    y=20
+    y=10
     assert x==y
 
 def test_method2():
@@ -18,4 +18,4 @@ def test_method3():
 def test_method4():
     a=2
     b=2
-    assert a + b == 7
+    assert a + b == 4
