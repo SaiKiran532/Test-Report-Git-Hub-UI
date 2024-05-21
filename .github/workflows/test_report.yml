@@ -22,7 +22,7 @@ jobs:
 
     - name: Run tests and generate report
       run: |
-        pytest pytestMarkExample.py --junitxml=test_results.xml tests/
+        pytest pytestMarkExample.py --junitxml=test_results.xml
 
     - name: Upload test report as artifact
       uses: actions/upload-artifact@v3
