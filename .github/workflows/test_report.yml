@@ -26,6 +26,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run tests and generate report
+      if: success() || failure()
       run: |
         pytest --tb=no pytestMarkExample.py --junitxml=test_results.xml
 
