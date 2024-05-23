@@ -13,13 +13,14 @@ phases:
     commands:
       - echo Checking out code...
       - git clone $CODEBUILD_SRC_DIR
+      - cd $CODEBUILD_SRC_DIR
 
   build:
     commands:
       - echo Clearing __pycache__ directories...
       - find . -type d -name "__pycache__" -exec rm -r {} +
       - echo Running tests...
-      - pytest --tb=no --junitxml=test_results.xml || true
+      - pytest --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
 
   post_build:
     commands:
