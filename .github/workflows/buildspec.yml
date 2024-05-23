@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - echo Checking out code...
+      - git clone $CODEBUILD_SRC_DIR
+
+  build:
+    commands:
+      - echo Running tests...
+      - pytest --tb=no --junitxml=test_results.xml || true
+
+  post_build:
+    commands:
+      - echo Uploading test report...
+      - aws s3 cp test_results.xml s3://real-world-bucket/test-results/test_results.xml
+
+artifacts:
+  files:
+    - test_results.xml
