@@ -27,3 +27,10 @@ phases:
 artifacts:
   files:
     - test_results.xml
+
+reports:
+  test_reports:
+    files:
+      - test_results.xml
+    base-directory: ./
+    report-group: my-reports
