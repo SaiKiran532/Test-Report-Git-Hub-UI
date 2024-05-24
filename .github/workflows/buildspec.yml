@@ -11,14 +11,10 @@ phases:
 
   pre_build:
     commands:
-      - echo Checking out code...
-      - git clone $CODEBUILD_SRC_DIR
-      - cd $CODEBUILD_SRC_DIR
+      - echo Pre-build phase: Source code is already checked out.
 
   build:
     commands:
-#      - echo Clearing __pycache__ directories...
-#      - find . -type d -name "__pycache__" -exec rm -r {} +
       - echo Running tests...
       - pytest tests/Pyexmp.py --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
 
