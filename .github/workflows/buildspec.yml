@@ -11,7 +11,7 @@ phases:
 
   pre_build:
     commands:
-      - echo Pre-build phase: Source code is already checked out.
+      - echo Pre-build phase Source code is already checked out.
 
   build:
     commands:
