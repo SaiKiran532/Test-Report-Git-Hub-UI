@@ -9,8 +9,8 @@ def test_method2():
     assert a + b == 5
 
 def test_method3():
-    x=10
-    y=10
+    x=11
+    y=11
     assert x==y
 
 
