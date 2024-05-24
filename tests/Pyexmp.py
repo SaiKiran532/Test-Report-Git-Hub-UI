@@ -17,5 +17,5 @@ def test_method8():
 
 def test_method9():
     a=2
-    b=2
+    b=3
     assert a + b == 4
