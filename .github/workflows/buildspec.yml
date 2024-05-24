@@ -15,8 +15,8 @@ phases:
 
   build:
     commands:
-      - echo Running tests...
-      - pytest tests/Pyexmp.py --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
+      - echo Running mytests...
+      - py.test --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
 
   post_build:
     commands:
