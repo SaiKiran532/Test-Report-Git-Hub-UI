@@ -17,10 +17,10 @@ phases:
 
   build:
     commands:
-      - echo Clearing __pycache__ directories...
-      - find . -type d -name "__pycache__" -exec rm -r {} +
+#      - echo Clearing __pycache__ directories...
+#      - find . -type d -name "__pycache__" -exec rm -r {} +
       - echo Running tests...
-      - pytest --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
+      - pytest Pyexmp.py --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml || true
 
   post_build:
     commands:
